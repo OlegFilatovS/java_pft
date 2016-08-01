@@ -9,8 +9,8 @@ public class FirstHomework {
     public static void main(String[] args) {
 
 
-        Point p1 = new Point(2,3);
-        Point p2 = new Point(6,7);
+        Point p1 = new Point(3,2);
+        Point p2 = new Point(4,2);
 
         //Execution with static method
 
