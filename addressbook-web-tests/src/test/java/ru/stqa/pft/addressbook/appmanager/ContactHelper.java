@@ -28,7 +28,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("middlename"),contactData.getMiddleName());
         click(By.name("lastname"));
         type(By.name("lastname"),contactData.getLastName());
-        click(By.name("theform"));
         click(By.name("company"));
         type(By.name("company"),contactData.getCompany());
         click(By.name("address"));
@@ -36,6 +35,32 @@ public class ContactHelper extends HelperBase {
     }
 
     public void addingNewUser() {
+
         click(By.linkText("add new"));
+    }
+
+    public void selectContactCheckBox() {
+
+        setElementSelected(By.id("4"));
+
+    }
+    public void clickToDeleteButton() {
+        click((By.xpath("//div[@id='content']/form[2]/div[2]/input")));
+    }
+
+    public void clickToEditButton() {
+
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+
+    }
+
+    public void acceptContactDeletionAllert () {
+
+        acceptAlert();
+    }
+
+    public void clickToUpdateButton() {
+
+        click(By.name("update"));
     }
 }

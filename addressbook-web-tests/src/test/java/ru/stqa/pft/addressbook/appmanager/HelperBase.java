@@ -24,6 +24,14 @@ public class HelperBase {
         wd.findElement(locator).sendKeys(text);
     }
 
+    protected void setElementSelected (By id) {
+        if (!wd.findElement(id).isSelected()) {
+            click(id);
+        }
+    }
+
+
+
     public boolean isAlertPresent() {
         try {
             wd.switchTo().alert();
@@ -31,6 +39,11 @@ public class HelperBase {
         } catch (NoAlertPresentException e) {
             return false;
         }
+    }
+
+    protected void acceptAlert() {
+
+        wd.switchTo().alert().accept();
     }
 
 
