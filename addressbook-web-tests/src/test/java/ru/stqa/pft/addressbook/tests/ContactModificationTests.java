@@ -13,7 +13,7 @@ public class ContactModificationTests extends TestBase {
     public void testGroupDeletion() {
         app.getContactHelper().clickToEditButton();
         app.getContactHelper().clickToDeleteButton();
-        app.getContactHelper().initNewUser(new ContactData("Name2", "Middle Name2", "Last name2", "Best company2", "SaintP"));
+        app.getContactHelper().initNewUser(new ContactData("Name2", "Middle Name2", "Last name2", "Best company2", "SaintP","some group"),false);
         app.getContactHelper().clickToUpdateButton();
         app.getContactHelper().returnToHomePage();
     }

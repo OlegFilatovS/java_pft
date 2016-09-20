@@ -1,15 +1,17 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 /**
  * Created by Oleg.Filatov on 02.08.2016.
  */
 public class ContactHelper extends HelperBase {
 
-    public ContactHelper(FirefoxDriver wd) {
+    public ContactHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -21,7 +23,7 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void initNewUser(ContactData contactData) {
+    public void initNewUser(ContactData contactData, boolean creation) {
         click(By.name("firstname"));
         type(By.name("firstname"),contactData.getName());
         click(By.name("middlename"));
@@ -32,6 +34,12 @@ public class ContactHelper extends HelperBase {
         type(By.name("company"),contactData.getCompany());
         click(By.name("address"));
         type(By.name("address"),contactData.getAdrress());
+
+        if (creation) {
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+            Assert.assertFalse(ifElementPresent(By.name("new_group")));
+        }
     }
 
     public void addingNewUser() {
