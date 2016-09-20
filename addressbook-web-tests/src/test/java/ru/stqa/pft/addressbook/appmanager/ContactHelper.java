@@ -38,8 +38,9 @@ public class ContactHelper extends HelperBase {
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
-            Assert.assertFalse(ifElementPresent(By.name("new_group")));
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
+
     }
 
     public void addingNewUser() {
@@ -70,5 +71,15 @@ public class ContactHelper extends HelperBase {
     public void clickToUpdateButton() {
 
         click(By.name("update"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createContact(ContactData contactData, boolean b) {
+        initNewUser(contactData, b);
+        initUserInput();
+        returnToHomePage();
     }
 }

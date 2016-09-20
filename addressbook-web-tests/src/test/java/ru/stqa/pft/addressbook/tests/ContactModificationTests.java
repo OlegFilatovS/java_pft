@@ -11,6 +11,9 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void testGroupDeletion() {
+        if ( ! app.getContactHelper().isThereAContact()){
+            app.getContactHelper().createContact(new ContactData("Name", "Middle Name", "Last name", "Best company", "Moskow","some group"), true);
+        }
         app.getContactHelper().clickToEditButton();
         app.getContactHelper().clickToDeleteButton();
         app.getContactHelper().initNewUser(new ContactData("Name2", "Middle Name2", "Last name2", "Best company2", "SaintP","some group"),false);

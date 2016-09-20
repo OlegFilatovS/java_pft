@@ -36,5 +36,6 @@ public class ContactData {
     public String getAdrress() {
         return adrress;
     }
+
     public String getGroup() { return group; }
 }

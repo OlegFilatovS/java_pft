@@ -28,19 +28,17 @@ public class ApplicationManager {
     }
 
     public void init() {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Oleg.Filatov\\Documents\\FireFoxWebDriver\\geckodriver.exe");
-        if(Objects.equals(browser, BrowserType.FIREFOX)){
-                        wd = new FirefoxDriver();
-                   } else if (Objects.equals(browser, BrowserType.CHROME)){
-                       wd = new ChromeDriver();
-                   } else if (Objects.equals(browser, BrowserType.IE)){
-                       wd = new InternetExplorerDriver();
+        if (Objects.equals(browser, BrowserType.FIREFOX)) {
+            wd = new FirefoxDriver();
+        } else if (Objects.equals(browser, BrowserType.CHROME)){
+            wd = new ChromeDriver();
+        } else if (Objects.equals(browser, BrowserType.IE)) {
+            wd = new InternetExplorerDriver();
         }
-
-        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
-        groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
+        groupHelper = new GroupHelper(wd);
         sessionHelper = new SessionHelper(wd);
         contactHelper = new ContactHelper(wd);
         sessionHelper.login("admin", "secret");
