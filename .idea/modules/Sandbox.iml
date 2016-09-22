@@ -4,13 +4,13 @@
     <output url="file://$MODULE_DIR$/../../Sandbox/build/classes/main" />
     <output-test url="file://$MODULE_DIR$/../../Sandbox/build/classes/test" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../Sandbox">
-      <sourceFolder url="file://$MODULE_DIR$/../../Sandbox/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../Sandbox/src/test/java" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../../sandbox">
+      <sourceFolder url="file://$MODULE_DIR$/../../sandbox/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../sandbox/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sandbox/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../Sandbox/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../Sandbox/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../Sandbox/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../sandbox/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

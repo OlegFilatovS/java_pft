@@ -1,12 +1,15 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "HelloWorld"
+mainClassName = "ru.vitali.pft.sandbox.MyFirstProgram"
 
 repositories{
-
     mavenCentral()
 }
 
-dependencies {
+dependencies{
     compile 'org.testng:testng:6.9.10'
+}
+
+test {
+    useTestNG()
 }
